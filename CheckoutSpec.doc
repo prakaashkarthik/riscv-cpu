@@ -11,7 +11,7 @@ A note on this: in my memory model, each line is 32bits long, and my input addre
 
 TITLE: REGISTER FILE
 
-A typical register file, as read from [1] and [2], seems to be one that provides the ability to read 2 registers simultaneously and write one register. This is the basic structure, although one can argue that an even more basic structure would be one that allows you to read one register and write on register. The added functionality should be because of the complexity of the CPU design, and nothing else. So at some point I should expect to update my design. 
+A typical register file, as read from [1] and [2], seems to be one that provides the ability to read 2 registers simultaneously and write one register. This is the basic structure, and the reason for this is because your typical instruction - especially in RISCV ISA - will have two source registers to read from and one destination register to write to. Which is why the basic structure isn't just reading one register and writing another. 
 
 [1] Digital Design and Computer Architecture by David M. Harris and Sarah L. Harris
 [2] Lecture Notes [http://web.cse.ohio-state.edu/~teodorescu.1/download/teaching/cse675.au08/Cse675.02.E.MemoryDesign_part1.pdf] from Ohio State Univ 
