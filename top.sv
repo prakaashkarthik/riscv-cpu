@@ -1,8 +1,11 @@
+`include "struct_defines.svh"
+
 module top (
 	input clk, 
 	input rst_n,
 
-	output [31:0] fetch_p
+	output [31:0] fetch_p,
+	output [`DECODE_PIPE_MSB : 0] decode_p
 );
 
 
@@ -10,7 +13,8 @@ module top (
 		.clk(clk), 
 		.rst_n(rst_n),
 
-		.fetch_p(fetch_p)
+		.fetch_p(fetch_p),
+		.decode_p(decode_p)
 	);
 
 endmodule
