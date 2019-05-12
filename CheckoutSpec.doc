@@ -1,0 +1,17 @@
+Checkout Learning Experiment
+- This is the beginning of an experiment in Checkout Learning, where we can more accurately show students the growth of thought process from start to finish - perhaps without the aid of video tutorials. 
+- The idea is that we document our descriptions of the code/constituent modules as we develop them. This way, someone learning how to develop it from scratch can checkout a commit corresponding to a certain stage in development and understand how the codebase grew and why. 
+
+TITLE: INSTRUCTION FETCH
+
+At the time of starting this journaling, I’ve already implemented an instruction fetch mechanism and instruction memory. 
+
+A note on this: in my memory model, each line is 32bits long, and my input address is line aligned - not byte aligned. I probably need to change this going forward. The implications of this are that my program counter now increments by 1 instead of by 4. Before the chip becomes too complicated, I should consider how to change that. 
+
+
+TITLE: REGISTER FILE
+
+A typical register file, as read from [1] and [2], seems to be one that provides the ability to read 2 registers simultaneously and write one register. This is the basic structure, although one can argue that an even more basic structure would be one that allows you to read one register and write on register. The added functionality should be because of the complexity of the CPU design, and nothing else. So at some point I should expect to update my design. 
+
+[1] Digital Design and Computer Architecture by David M. Harris and Sarah L. Harris
+[2] Lecture Notes [http://web.cse.ohio-state.edu/~teodorescu.1/download/teaching/cse675.au08/Cse675.02.E.MemoryDesign_part1.pdf] from Ohio State Univ 
