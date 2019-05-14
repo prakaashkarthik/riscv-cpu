@@ -13,12 +13,12 @@ module core (
 	logic [31:0] inst; // Instruction
 
 	logic [4:0] main_rf_read_reg_num0, main_rf_read_reg_num1; 
-	logic [31:0] main_rf_read_data0, main_rf_read_data1;
+	logic [REGISTER_WIDTH - 1 : 0] main_rf_read_data0, main_rf_read_data1;
 	
 	/* verilator lint_off UNDRIVEN */
 	logic main_rf_write_en;
 	logic [4:0] main_rf_wr_reg_num;
-	logic [31:0] main_rf_write_data;	
+	logic [REGISTER_WIDTH - 1 : 0] main_rf_write_data;	
 	/* verilator lint_on UNDRIVEN */
 
 
