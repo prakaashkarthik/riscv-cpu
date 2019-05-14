@@ -15,3 +15,10 @@ A typical register file, as read from [1] and [2], seems to be one that provides
 
 [1] Digital Design and Computer Architecture by David M. Harris and Sarah L. Harris
 [2] Lecture Notes [http://web.cse.ohio-state.edu/~teodorescu.1/download/teaching/cse675.au08/Cse675.02.E.MemoryDesign_part1.pdf] from Ohio State Univ 
+
+
+TITLE: DECODE BLOCK
+At this point, the decode block simply parses the instruction and separates out the different fields as provided in the RV32I opcode map. Based on my reading of the ISA, there are at most 3 operands to the execute/ALU block. So the decode block assigns the operands based on the opcode that it sees. 
+
+
+Is this a future-proof decision? What if there's something that needs to operate on more than that? Let's stick with this for now and see if its worth changing the implementation later  
