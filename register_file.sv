@@ -1,23 +1,14 @@
-// TODO: Move this to 2 register reads and 1 register write
-// TODO: Match register file implementation to RV32I ISA spec
-
-// Need to mnemonic-fy the register indices. Defines or parameters? Parameter
-// doesn't make sense -- should probably be defines and included in. 
-
-// Also probably need to port out my entire register file so that I can debug
-// it? Need to see how I can dump this module in Verilator
-
-module register_file # (parameter REG_FILE_SIZE = 32) (
+module register_file # (parameter REG_FILE_SIZE = 32, parameter REG_WIDTH = 32) (
 	input clk, 
 	input rst_n, 
 	input [4:0] rd_reg_num0, 
 	input [4:0] rd_reg_num1, 
 	input [4:0] wr_reg_num, 
 	input write_en,
-	input [31:0] write_data,	
+	input [REG_WIDTH - 1 : 0] write_data,	
 	
-	output [31:0] read_data0, 
-	output [31:0] read_data1
+	output [REG_WIDTH - 1 : 0] read_data0, 
+	output [REG_WIDTH - 1 : 0] read_data1
 );
 
 

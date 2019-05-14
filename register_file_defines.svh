@@ -1,3 +1,5 @@
+localparam REGISTER_WIDTH = 32;
+
 // Function specific register mnemnonics
 `define ZERO 0
 `define RA 1 // Return Address
